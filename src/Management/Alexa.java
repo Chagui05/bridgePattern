@@ -6,9 +6,11 @@ import device.Device;
 
 public class Alexa implements IManager{
 	private Device device;
+	private String tag;
 
-	public Alexa(Device pDevice) {
+	public Alexa(Device pDevice, String pTag) {
 		device = pDevice;
+		tag = pTag;
 	}
 	
 	public void volumeUp() {
@@ -29,5 +31,11 @@ public class Alexa implements IManager{
 
 	public Device getDevice() {
 		return device;
+	}
+
+	@Override
+	public String getTag() {
+		// TODO Auto-generated method stub
+		return tag;
 	}
 }

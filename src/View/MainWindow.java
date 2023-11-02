@@ -48,10 +48,14 @@ public class MainWindow extends JFrame{
         gridPanel.add(mostrar);
         
         JPanel labelPanel = new JPanel();
-        JLabel tipoDeDispositivo = new JLabel("Tipo");
+        JLabel tipoDeDispositivo = new JLabel("Tipos");
+        JLabel tipoDeManager = new JLabel("");
         tipoDeDispositivo.setFont(new Font("Monospaced", Font.BOLD, 38)); 
 		tipoDeDispositivo.setForeground(Color.BLACK);
+		tipoDeManager.setFont(new Font("Monospaced", Font.BOLD, 38)); 
+		tipoDeManager.setForeground(Color.GRAY);
 		labelPanel.add(tipoDeDispositivo);
+		labelPanel.add(tipoDeManager);
 		
 		JPanel labelPanel2 = new JPanel();
         JLabel volumeLevel = new JLabel("Volumen: ");
@@ -79,6 +83,7 @@ public class MainWindow extends JFrame{
             public void actionPerformed(ActionEvent e) {
             	activeManager = (IManager) managers.getNext();
             	tipoDeDispositivo.setText(activeManager.getDevice().getTag());
+            	tipoDeManager.setText(activeManager.getTag());
             	imageLabel.setIcon(null);
             	volumeLevel.setText("Volumen: "+activeManager.getDevice().getVolumeLevel());
             	System.out.println("Manager activo: "+activeManager);

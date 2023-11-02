@@ -6,9 +6,11 @@ import device.Device;
 
 public class GoogleHome implements IManager {
 	private Device device;
+	private String tag;
 
-	public GoogleHome(Device pDevice) {
+	public GoogleHome(Device pDevice, String pTag) {
 		device = pDevice;
+		tag = pTag;
 	}
 	
 	public void volumeUp() {
@@ -29,5 +31,10 @@ public class GoogleHome implements IManager {
 	public Device getDevice() {
 		
 		return device;
+	}
+	
+	public String getTag() {
+		// TODO Auto-generated method stub
+		return tag;
 	}
 }

@@ -10,4 +10,5 @@ public interface IManager {
 	public void volumeDown();
 	public ImageIcon showImage(String imageDir);
 	public Device getDevice();
+	public String getTag();
 }
